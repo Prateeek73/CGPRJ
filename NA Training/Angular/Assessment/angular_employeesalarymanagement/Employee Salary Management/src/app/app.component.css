@@ -1,0 +1,23 @@
+h4 {
+    font-variant: small-caps;
+    font-family: Georgia;
+    color: #000000;
+    font-size: 40px;
+    text-shadow: 3px 2px #FFFFFF;
+}
+nav {
+    background-color: #e3f2fd;
+    height:150px;
+}
+li{
+    font-size: 15px;
+}
+a{
+    text-decoration: none;
+    float: right;
+    color:#000000;
+}
+ul{
+    list-style-type: none;
+    
+}

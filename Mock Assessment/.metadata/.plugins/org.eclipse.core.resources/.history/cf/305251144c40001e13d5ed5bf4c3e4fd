@@ -1,0 +1,49 @@
+package com.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.entities.Account;
+import com.exception.InvalidAccountException;
+import com.service.IAccountService;
+
+//Provide necessary Annotation
+@RestController
+public class AccountController {
+	
+	//Provide necessary Annotation
+	@Autowired
+	IAccountService accountService;
+	
+	//Provide necessary Annotation and fill code
+
+	public  Account openAccount(Account account) {
+	
+		return accountService.openAccount(account);
+		
+	}
+	
+	public Account updateAccountHolderPhoneNumber(String accountNumber,String phoneNumber) throws InvalidAccountException {
+	
+		return accountService.updateAccountHolderPhoneNumber(accountNumber, phoneNumber);
+		
+	}
+	
+	public Account viewAccountByAccountNumber(String accountNumber) throws InvalidAccountException {
+	
+		return accountService.viewAccountByAccountNumber(accountNumber);
+		
+	}
+	
+	public List<Account> viewAccountByBalance(double balance) {
+	
+		return accountService.viewAccountByBalance(balance);
+		
+	}
+
+	
+}
+
+	

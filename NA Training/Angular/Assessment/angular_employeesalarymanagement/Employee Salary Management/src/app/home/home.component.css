@@ -1,0 +1,46 @@
+h4 {
+    color: darkblue;
+    text-align: center;
+    padding:8px;
+}
+div{
+    background-color: #f9e076;
+    padding:8px;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    width:35%;
+}
+td {
+    background-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    padding: 10px;
+}
+#filter, #submit{
+    background-color: #98bf64;
+    padding:8px;
+    border-radius:6px;
+    color: #ffffff;
+}
+#view{
+    background-color: #FA5F55;
+    padding:8px;
+    border-radius:6px;
+    color: #ffffff;
+}
+p{
+    text-align: center;
+}
+input, button{	 	  	    	   	 	      	 	
+    width:60%;
+}
+
+
+
+
+
+
+

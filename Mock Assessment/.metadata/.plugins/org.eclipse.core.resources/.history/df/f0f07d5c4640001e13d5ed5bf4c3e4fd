@@ -1,0 +1,10 @@
+package com.exception;
+
+public class InvalidAccountException extends Exception {
+
+	public InvalidAccountException(String msg) {
+		// TODO Auto-generated constructor stub
+		super(msg);
+	}
+
+}

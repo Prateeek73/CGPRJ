@@ -1,0 +1,39 @@
+package com.validate;
+import com.model.Candidate;
+
+import org.springframework.validation.Validator;
+import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
+
+@Component
+public class CustomValidator implements Validator {
+    
+    public boolean supports(Class<?> clazz) {
+    	return Candidate.class.equals(clazz);
+    }
+    
+    @Override
+	public void validate(Object target, Errors errors) {
+		//fill code to do validation for candidate name and contact number
+		Candidate candidate = (Candidate) target;
+
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "candidateName", "NotEmpty");
+        if (!candidate.getCandidateName().matches("^[a-zA-Z\\s]{3,10}$")) {
+            errors.rejectValue("candidateName", "Invalid.candidate.candidateName");
+        }
+
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "contactNumber", "NotEmpty");
+        if (!candidate.getContactNumber().matches("^[6-9]\\d{9}$")) {
+            errors.rejectValue("contactNumber", "Invalid.candidate.contactNumber");
+        }
+
+        if (candidate.getExpectedSalary() < 10000 || candidate.getExpectedSalary() > 200000) {
+            errors.rejectValue("expectedSalary", "Invalid.candidate.expectedSalary");
+        }
+
+        if (candidate.getYearsOfExperience() < 0) {
+            errors.rejectValue("yearsOfExperience", "Invalid.candidate.yearsOfExperience");
+        }
+ 	}
+
+}

@@ -1,0 +1,5 @@
+package com.repository;
+
+public interface AccountRepository extends JpaRepository<Account, Integer> {
+
+}

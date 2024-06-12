@@ -1,0 +1,22 @@
+<!-- Create a table and Show the student details using ngFor Directive -->
+
+<table class="table table-striped table-bordered">
+    <thead class="bg-primary bg-opacity-50">
+        <!-- Implement Your Code Here for thead-->
+        <tr>
+            <th>Name</th>
+            <th>Register Number</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Implement Your Code Here for tbody-->
+        <tr *ngFor = "let item of student">
+            <td>{{ item.name }}</td>
+            <td>{{ item.registerNumber }}</td>
+            <td>{{ item.age }}</td>
+        </tr>
+    </tbody>
+</table>     
+<hr>
+<app-add-student (onSubmit)="addStudent($event)"></app-add-student>

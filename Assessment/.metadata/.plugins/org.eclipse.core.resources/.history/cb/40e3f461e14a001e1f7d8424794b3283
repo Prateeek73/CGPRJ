@@ -1,0 +1,36 @@
+package com.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.SecurityFilterChain;
+
+import com.jwt.EntryPointJwt;
+
+@Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class SecurityConfig {
+
+	@Autowired
+	private EntryPointJwt jwtEntryPoint;
+	
+	@Bean
+	public SecurityFilterChain doFilter(HttpSecurity http) throws Exception {
+		http.cors(cors -> cors.disable())
+				.csrf(csrf -> csrf.disable())
+				.authorizeRequests(auth -> auth
+						.requestMatchers("/app/**").permitAll()
+						.requestMatchers("leavemanagementapp").authenticated()
+						.anyRequest().authenticated())
+				.exceptionHandling(ex -> ex.authenticationEntryPoint(jwtEntryPoint))
+				.sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+		
+				
+			
+		
+		return http.build();
+	}
+}

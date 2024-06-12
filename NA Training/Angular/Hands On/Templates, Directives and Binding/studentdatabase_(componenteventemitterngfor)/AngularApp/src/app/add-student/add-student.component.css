@@ -1,0 +1,17 @@
+form{
+    width: 25%;
+}
+input[type="text"],input[type="number"]{
+    width: 100%;
+    padding: 10px;
+    margin-top:10px;
+    border: 2px solid #962b2b;
+    border-radius: 5px;
+}
+button{
+    width: 107%;
+    border: 2px solid #962b2b;
+    padding: 10px;
+    margin-top:10px;
+    border-radius: 5px;
+}

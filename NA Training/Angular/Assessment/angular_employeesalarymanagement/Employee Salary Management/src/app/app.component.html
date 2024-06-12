@@ -1,0 +1,15 @@
+<body>
+  <nav>
+      <h4>Employee Salary Management</h4>
+      <ul>
+        <li>
+          <!--Implement your code here-->
+          <a [routerLink]="['/home']" id="employeeDetails" [queryParams]="{flag:1}" >Add Employee Details</a>
+          <br>
+          <!--Implement your code here-->
+          <a [routerLink]="['/home']" id="filterEmployees" [queryParams]="{flag:2}">Filter Employee Details</a>
+        </li>
+      </ul>
+  </nav>
+<router-outlet></router-outlet>
+</body>

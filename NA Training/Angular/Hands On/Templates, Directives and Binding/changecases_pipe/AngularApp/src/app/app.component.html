@@ -1,0 +1,13 @@
+<!-- app.component.html -->
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Register Number</th>
+        <th>Age</th>
+    </tr>
+    <tr *ngFor="let stud of student">
+        <td>{{ stud.name | uppercase }}</td>
+        <td>{{ stud.registerNumber | lowercase }}</td>
+        <td>{{ stud.age }}</td>
+    </tr>
+</table>

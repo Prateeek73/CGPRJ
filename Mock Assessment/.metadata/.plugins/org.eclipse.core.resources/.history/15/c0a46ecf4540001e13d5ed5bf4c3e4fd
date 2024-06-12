@@ -1,0 +1,21 @@
+package com.repository;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import com.entities.BankTransaction;
+
+//Provide necessary Annotation
+public interface TransactionRepository {
+
+	// Provide necessary method to view transactions based on Account number,
+	// view transactions based on transaction type and
+	// view transactions based on transaction type and transaction amount greater
+	// than or equal to a value
+	List<BankTransaction> findByAccount_AccountNumber(String accountNumber);
+
+	List<BankTransaction> findByTransactionType(String transactionType);
+
+	List<BankTransaction> findByTransactionTypeAndAmountGreaterThanEqual(String transactionType, BigDecimal amount);
+
+}

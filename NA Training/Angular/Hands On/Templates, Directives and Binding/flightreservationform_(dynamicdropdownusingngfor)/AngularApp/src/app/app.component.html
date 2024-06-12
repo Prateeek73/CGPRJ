@@ -1,0 +1,40 @@
+<body>
+  <!--Fill code for heading-->
+  <h1>{{title}}</h1>
+  <table>
+    <tr>
+      <!--Fill code for name-->
+      <td><label for="name">Name</label></td>
+      <td><input type="text" id="name" name="name"></td>
+    </tr>
+    <tr>
+      <!--Fill code for Number of Tickets-->
+      <td><label for="numberOfTickets">Number of Tickets</label></td>
+      <td><input type="number" id="numberOfTickets" name="numberOfTickets"></td>
+    </tr>
+    <tr>
+      <!--Fill code for Departure City-->
+      <td><label for="departureCity">Departure City</label></td>
+      <td><input type="text" id="departureCity" name="departureCity"></td>
+    </tr>
+    <tr>
+      <!--Fill code for Destination City-->
+      <td><label for="destinationCity">Destination City</label></td>
+      <td><input type="text" id="destinationCity" name="destinationCity"></td>
+    </tr>
+    <tr>
+      <!--Fill code for Flight Class Type-->
+      <td><label for="flightClassType">Flight Class Type:</label></td>
+      <td>
+        <!--Fill code for dynamic dropdown-->
+        <select id="flightClassType" name="flightClassType">
+          <option value="">Select Flight Class Type</option>
+          <option *ngFor="let flightClass of flightClassList" [value]="flightClass">{{ flightClass.name }}</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <!--Fill you code here for button and display status-->
+  <button id="submit" (click)="showStatus()">Book Ticket</button>
+  <p>{{ status }}</p>
+</body>

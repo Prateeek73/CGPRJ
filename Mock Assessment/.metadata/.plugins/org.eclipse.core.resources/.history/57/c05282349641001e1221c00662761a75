@@ -1,0 +1,10 @@
+package com.restaurant.exception;
+
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class BookTableInvalidException extends Exception{
+	public BookTableInvalidException(String msg) {
+		super(msg);
+	}
+}

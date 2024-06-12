@@ -1,0 +1,43 @@
+package com.controller;
+
+import java.util.List;
+
+import com.entities.Account;
+import com.service.IAccountService;
+
+//Provide necessary Annotation
+public class AccountController {
+	
+	//Provide necessary Annotation
+	IAccountService accountService;
+	
+	//Provide necessary Annotation and fill code
+
+	public  Account openAccount(Account account) {
+	
+		return null;
+		
+	}
+	
+	public Account updateAccountHolderPhoneNumber(String accountNumber,String phoneNumber) {
+	
+		return null;
+		
+	}
+	
+	public Account viewAccountByAccountNumber(String accountNumber) {
+	
+		return null;
+		
+	}
+	
+	public List<Account> viewAccountByBalance(double balance) {
+	
+		return null;
+		
+	}
+
+	
+}
+
+	

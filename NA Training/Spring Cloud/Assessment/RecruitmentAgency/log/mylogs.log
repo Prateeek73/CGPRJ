@@ -1,0 +1,5 @@
+[INFO ] 28-08-2023 12:03:44.553 pm [http-nio-9090-exec-1]  com.recruitment.service.RecruitmentServiceImpl - View candidate based on position is successful
+[INFO ] 28-08-2023 12:15:37.414 pm [http-nio-9090-exec-10]  com.recruitment.service.RecruitmentServiceImpl - View candidate based on position is successful
+[INFO ] 28-08-2023 12:35:25.052 pm [http-nio-9090-exec-9]  com.recruitment.service.RecruitmentServiceImpl - View candidate based on position is successful
+[INFO ] 28-08-2023 12:35:45.972 pm [http-nio-9090-exec-10]  com.recruitment.service.RecruitmentServiceImpl - View candidate based on position is successful
+[INFO ] 28-08-2023 12:43:30.102 pm [http-nio-9090-exec-10]  com.recruitment.service.RecruitmentServiceImpl - View candidate based on position is successful

@@ -1,0 +1,71 @@
+package com.jwt;
+
+import java.io.IOException;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.JwtParser;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import io.jsonwebtoken.Jwts;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.service.UserDetailsServiceImpl;
+
+@Component
+public class TokenFilter extends OncePerRequestFilter {
+  @Autowired
+  private JwtUtility jwtUtils;
+
+  @Autowired
+  private UserDetailsServiceImpl userDetailsService;
+  
+  @Override
+  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+          throws ServletException, IOException {
+
+      try {
+    	  String token=null;
+    	  String header=request.getHeader("Authorization");
+
+          if (header != null && header.startsWith("Bearer ")) {
+        	  token= header.substring(7);
+          }
+
+          if (token != null && jwtUtils.validateToken(token)) {
+
+//        	  Claims claims = token.parserBuilder()
+//                      .setSigningKey("jwtSecretKey")
+//                      .build()
+//                      .parseClaimsJws(token)
+//                      .getBody();
+//              String username = String.valueOf(claims.get("username"));
+              jwtUtils=new JwtUtility();
+              String username = jwtUtils.getUsername(token);
+              UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+//              UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
+//                      userDetails, null, userDetails.getAuthorities());
+              UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
+                      username, null, userDetails.getAuthorities());
+              SecurityContextHolder.getContext().setAuthentication(authentication);
+          }
+      }
+      catch (Exception e) {
+          //throw new BadCredentialsException("Invalid Token received!");
+          //System.out.println(e.getClass() + "    "+ e.getMessage());
+      }
+
+      filterChain.doFilter(request, response);
+  }
+
+}
+

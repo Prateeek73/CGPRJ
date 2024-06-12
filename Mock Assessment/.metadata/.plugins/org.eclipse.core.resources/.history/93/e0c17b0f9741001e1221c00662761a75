@@ -1,0 +1,40 @@
+package com.restaurant.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.restaurant.exception.BookTableInvalidException;
+import com.restaurant.model.BookTable;
+import com.restaurant.service.IRestaurantService;
+
+public class RestaurantController {
+	
+	@Autowired
+	private IRestaurantService restaurentService;
+	
+	@PostMapping(value = "/book")
+	public BookTable bookATable(BookTable bookObj) throws BookTableInvalidException {
+		return restaurentService.bookATable(bookObj);
+	}
+
+	@PutMapping(value = "calculate/{bookingId}")
+	public BookTable calculateBill(@PathVariable String bookingId){
+		return restaurentService.calculateBill(bookingId);
+	}
+	
+	@GetMapping(value = "/viewBooking/{dateRequired}")
+	public List<BookTable> viewBookingOnAParticularDate(@PathVariable String dateRequired) throws BookTableInvalidException {
+		return restaurentService.viewBookingOnAParticularDate(dateRequired);
+		
+	}
+
+	@GetMapping(value = "/starRated")
+	public List<String> findStarRatedCustomer(){
+		return restaurentService.findStarRatedCustomer();
+	}
+}

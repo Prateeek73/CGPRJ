@@ -1,0 +1,10 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="jakarta.persistence.GenerationType"/><rhs name\="jakarta.persistence.TemporalType"/><rhs name\="jakarta.persistence.CascadeType"/><rhs name\="jpa.hibernate.Student$Gender"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="jakarta.persistence.GenerationType"/><rhs name\="jakarta.persistence.TemporalType"/><rhs name\="jakarta.persistence.CascadeType"/><rhs name\="jpa.hibernate.Student$Gender"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="java.util.Date"/></lhs><lhs name\="java.util.Date"><rhs name\="java.util.Date"/></lhs><lhs name\="jpa.hibernate.Student$Address"><rhs name\="jpa.hibernate.Student$Address"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="jpa.hibernate.Student$Gender"><rhs name\="jpa.hibernate.Student$Gender"/></lhs></history>
+content_assist_number_of_computers=15
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=23
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

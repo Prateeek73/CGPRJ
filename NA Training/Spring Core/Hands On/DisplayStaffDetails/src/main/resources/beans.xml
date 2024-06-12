@@ -1,0 +1,21 @@
+<beans  xmlns="http://www.springframework.org/schema/beans" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="staffObj" class="com.spring.app.Staff">
+        <constructor-arg index="0" type="int" value="1"/>
+        <constructor-arg index="1" type="java.lang.String" value="Gollum"/>
+        <constructor-arg index="2" type="java.lang.String" value="IT"/>
+        <constructor-arg index="3" type="long" value="9988776655"/>
+    </bean>
+    
+    <bean id="departmentObj" class="com.spring.app.Department">
+        <constructor-arg index="0" type="int" value="123"/>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="staffObj"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

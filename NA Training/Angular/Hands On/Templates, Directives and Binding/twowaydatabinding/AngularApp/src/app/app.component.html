@@ -1,0 +1,37 @@
+<!-- Implement Your Code Here -->
+<html>
+
+<body>
+    <div class="page-content">
+        <h2>Student Administration</h2>
+        <form (ngSubmit)="submitForm(student)" action="#" class="form-detail">
+            <h2 id="head">Student Database</h2>
+            <div class="form-row">
+                <!--Fill your code for name-->
+                <input id="name" name="name" placeholder="Name" [(ngModel)]="student.name" required />
+            </div>
+            <div class="form-row">
+                <!--Fill your code for register number-->
+                <input id="registerNumber" name="registerNumber" placeholder="Register Numer"
+                    [(ngModel)]="student.registerNumber" required />
+            </div>
+            <div class="form-row">
+                <!--Fill your code for age-->
+                <input id="age" name="age" placeholder="Age" [(ngModel)]="student.age" required />
+            </div>
+            <div class="form-row-last">
+                <!--Fill your code for button-->
+                <button type="submit">Submit</button>
+            </div>
+            <!--Display the student name in h1-->
+            <!--Display the student register number in h3-->
+            <!--Display the student age in h5-->
+            <h1>{{ student.name }}</h1>
+            <h3>{{ student.registerNumber }}</h3>
+            <h5>{{ student.age }}</h5>
+        </form>
+        <br>
+    </div>
+</body>
+
+</html>

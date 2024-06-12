@@ -1,0 +1,38 @@
+package com.controller;
+
+import java.util.List;
+
+import com.entities.BankTransaction;
+import com.service.ITransactionService;
+
+@RestController
+public class TransactionController {
+
+    @Autowired
+    private ITransactionService transactionService;
+
+    @PostMapping("/insertTransaction/{accountNumber}")
+    public BankTransaction insertTransaction(
+            @PathVariable String accountNumber,
+            @RequestBody BankTransaction transactionObj) {
+        return transactionService.insertTransaction(transactionObj, accountNumber);
+    }
+
+    @GetMapping("/viewTransactionByAccountNumber/{accountNumber}")
+    public List<BankTransaction> viewTransactionByAccountNumber(@PathVariable String accountNumber) {
+        return transactionService.viewTransactionByAccountNumber(accountNumber);
+    }
+
+    @GetMapping("/viewTransactionByTransactionType/{transactionType}")
+    public List<BankTransaction> viewTransactionByTransactionType(@PathVariable String transactionType) {
+        return transactionService.viewTransactionByTransactionType(transactionType);
+    }
+
+    @GetMapping("/viewTransactionByTransactionTypeAndAmount/{transactionType}/{amount}")
+    public List<BankTransaction> viewTransactionByTransactionTypeAndAmount(
+            @PathVariable String transactionType,
+            @PathVariable double amount) {
+        return transactionService.viewTransactionByTransactionTypeAndAmount(transactionType, amount);
+    }
+
+}

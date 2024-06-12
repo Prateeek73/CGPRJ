@@ -1,0 +1,50 @@
+package com.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.entities.BankTransaction;
+import com.exception.InvalidBankTransactionException;
+import com.service.ITransactionService;
+
+//Provide necessary Annotation
+@RestController
+public class TransactionController {
+	
+	//Provide necessary Annotation
+	@Autowired
+	ITransactionService transactionService;
+
+	//Provide necessary Annotation and fill code
+	@PostMapping("/insertTransaction/{accountNumber}")
+	public BankTransaction insertTransaction(@PathVariable("accountNumber") String accountNumber, @RequestBody BankTransaction transactionObj) throws InvalidBankTransactionException  {
+		return transactionService.insertTransaction(transactionObj, accountNumber);
+	}
+	
+	public List<BankTransaction> viewTransactionByAccountNumber(String accountNumber) throws InvalidBankTransactionException {
+		return transactionService.viewTransactionByAccountNumber(accountNumber);
+	}
+	
+
+	public List<BankTransaction> viewTransactionByTransactionType(String transactionType){
+		return transactionService.viewTransactionByTransactionType(transactionType);
+	}
+	
+
+	public List<BankTransaction> viewTransactionByTransactionTypeAndAmount(String transactionType,double amount){
+		return transactionService.viewTransactionByTransactionTypeAndAmount(transactionType, amount);
+	}
+	
+	@ExceptionHandler(InvalidBankTransactionException.class)
+    public ResponseEntity<String> handleTransactionNotFoundException(InvalidBankTransactionException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+}

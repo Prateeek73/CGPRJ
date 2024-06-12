@@ -1,0 +1,76 @@
+package com.service;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Component;
+
+import com.model.PropertyInfo;
+
+@Component
+public class PropertyService {
+	
+	private ArrayList<PropertyInfo> propertyList=new ArrayList<PropertyInfo>();
+	
+	public ArrayList<PropertyInfo> getPropertyList() {
+		return propertyList;
+	}
+
+	public void setPropertyList(ArrayList<PropertyInfo> propertyList) {
+		this.propertyList = propertyList;
+	}
+
+	public PropertyService()
+	{
+		PropertyInfo propertyObj1 = new PropertyInfo(10021, "Approved", "50 x 60", "Chennai", 9000000, "Available");
+		PropertyInfo propertyObj2 = new PropertyInfo(10025, "Not Approved", "30 x 50", "Bangalore", 9500000, "Available");
+		PropertyInfo propertyObj3 = new PropertyInfo(10034, "Approved", "45 x 30", "Kerala", 8200000, "Available");
+		PropertyInfo propertyObj4 = new PropertyInfo(10062, "Approved", "40 x 50", "Bangalore", 9600000, "Sold");
+		PropertyInfo propertyObj5 = new PropertyInfo(10012, "Not Approved", "50 x 60", "Chennai", 6500000, "Available");
+		PropertyInfo propertyObj6 = new PropertyInfo(10042, "Approved", "30 x 40", "Bangalore", 12000000, "Available");
+		PropertyInfo propertyObj7 = new PropertyInfo(10071, "Approved", "40 x 50", "Chennai", 7500000, "Sold");
+		PropertyInfo propertyObj8 = new PropertyInfo(10027, "Approved", "35 x 40", "Bangalore", 9200000, "Available");
+		PropertyInfo propertyObj9 = new PropertyInfo(10029, "Approved", "25 x 60", "Chennai", 8500000, "Available");
+		PropertyInfo propertyObj10 = new PropertyInfo(10046, "Not Approved", "30 x 30", "Chennai", 6200000, "Sold");
+		
+		propertyList.add(propertyObj1);
+		propertyList.add(propertyObj2);
+		propertyList.add(propertyObj3);
+		propertyList.add(propertyObj4);
+		propertyList.add(propertyObj5);
+		propertyList.add(propertyObj6);
+		propertyList.add(propertyObj7);		
+		propertyList.add(propertyObj8);		
+		propertyList.add(propertyObj9);		
+		propertyList.add(propertyObj10);		
+
+	}
+	
+	
+	public boolean addProperty(PropertyInfo propertyObj){
+		return propertyList.add(propertyObj);
+	}
+	
+	public PropertyInfo viewPropertyById(Integer propertyId) {
+		for(PropertyInfo property : propertyList) {
+			if(property.getPropertyId()==propertyId)
+				return property;
+		}
+       return null;
+	}
+
+	public ArrayList<PropertyInfo> viewPropertyByLocationAndCostRange(String location,double lowLimit,double highLimit)
+	{
+		return null;
+	}
+		
+	public boolean updatePropertyStatus(Integer propertyId)
+	{
+		return false;
+	}
+		
+	public boolean deleteProperty(Integer propertyId) 
+	{
+		return false;
+	}
+
+}

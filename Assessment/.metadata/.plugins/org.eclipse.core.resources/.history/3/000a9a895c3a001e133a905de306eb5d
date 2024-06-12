@@ -1,0 +1,19 @@
+package com.service;
+
+import org.springframework.stereotype.Service;
+
+import com.model.Order;
+
+//use appropriate annotation to configure BillService as a Service
+@Service
+public class BillService {
+	
+	//calculate the totalCost and return the cost
+	public double calculateTotalCost(Order order) {
+		double cost=0.0;
+		cost = cost + 0.03*
+		// fill the code
+		return cost;
+	}
+
+}

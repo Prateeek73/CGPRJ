@@ -1,0 +1,28 @@
+package com.dao;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.bean.ATMCard;
+import com.bean.Account;
+import com.repository.ATMCardRepository;
+import com.repository.AccountRepository;
+
+@Repository
+public class ATMCardDAO {
+	@Autowired
+	private AccountRepository accountRepository;
+
+	@Autowired
+	private ATMCardRepository atmCardRepository;
+
+	public void issueATMCardToAccount(int accountNumber, ATMCard atmCardObjet) {
+		Optional<Account>  accountOptional = accountRepository.findById(accountNumber);
+		if(accountOptional.isPresent()) {
+			atmCardObjet.setAccount(accountOptional.get());
+        	atmCardRepository.save(atmCardObjet);
+		}
+	}
+}

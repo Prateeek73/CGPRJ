@@ -1,0 +1,46 @@
+.page-content {
+	width: 100%;
+	margin:  0 auto;
+	background: #75e2e9;
+	justify-content: center;
+
+}
+
+h3 {
+    background-color: #ffa601;
+}
+
+.form-detail  {
+	background: #fff;
+	border-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	width: 38%;
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: blueviolet;
+	margin-left: 30%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+    font-size: large;
+}
+
+.form-row { 
+    position: relative;
+	margin-bottom: 24px;
+	padding-left: 60px;
+    padding-right: 50px;
+}
+
+h2 {
+    background-color: blueviolet;
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    border-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}

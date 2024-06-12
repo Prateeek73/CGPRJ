@@ -1,0 +1,134 @@
+$set:
+Purpose: Adds new fields to documents.
+Example: $set: { "NewField": "NewValue" }
+
+$unset:
+Purpose: Removes fields from documents.
+Example: $unset: "FieldName"
+
+$inc:
+Purpose: Increments the value of a numeric field.
+Example: $inc: { "NumericField": 5 }
+
+$size:
+Purpose: Returns the number of elements in an array.
+Example: $size: "$ArrayField"
+
+$push:
+Purpose: Appends a value to an array field.
+Example: $push: { "ArrayField": "NewValue" }
+
+$sum:
+Purpose: Calculates the sum of numeric values.
+Example: $sum: "$NumericField"
+
+$skip:
+Purpose: Skips a specified number of documents in the pipeline.
+Example: $skip: 10
+
+$limit:
+Purpose: Limits the number of documents in the output.
+Example: $limit: 5
+
+$sort:
+Purpose: Sorts documents based on specified fields.
+Example: $sort: { "FieldName": 1 }
+
+$sortByCount:
+Purpose: Groups documents by a specified field and counts occurrences.
+Example: $sortByCount: "$FieldToCount"
+
+$ne, $gt, $gte, $lt, $lte:
+Purpose: Comparison operators for "not equal," "greater than," "greater than or equal," "less than," and "less than or equal."
+Example: { "NumericField": { $gte: 10 } }
+
+$in:
+Purpose: Matches values against an array of possibilities.
+Example: { "Field": { $in: ["Value1", "Value2"] } }
+
+$or, $and:
+Purpose: Logical operators for "or" and "and" conditions.
+Example: { $or: [{ "Condition1": true }, { "Condition2": true }] }
+
+$add, $subtract, $multiply, $divide, $mod:
+Purpose: Arithmetic operators for addition, subtraction, multiplication, division, and modulo.
+Example: { "Result": { $add: ["$Field1", "$Field2"] } }
+
+$regex:
+Purpose: Matches documents based on a regular expression.
+Example: { "Field": { $regex: /pattern/ } }
+
+$concat:
+Purpose: Concatenates strings.
+Example: { "Concatenated": { $concat: ["$String1", " ", "$String2"] } }
+
+$substr:
+Purpose: Returns a substring of a string.
+Example: { "Substring": { $substr: ["$StringField", 0, 5] } }
+
+$match:
+Purpose: Filters documents based on specified conditions.
+Example: { $match: { "Field": "Value" } }
+
+$group:
+Purpose: Groups documents for aggregation purposes.
+Example: { $group: { _id: "$GroupField", Total: { $sum: "$NumericField" } } }
+
+$project:
+Purpose: Shapes the output documents by renaming, adding, or excluding fields.
+Example: { $project: { _id: 0, "NewField": "$OldField" } }
+
+$out:
+Purpose: Writes the result to a new collection.
+Example: { $out: "NewCollection" }
+
+$addToSet:
+Purpose: Adds unique values to an array field.
+Example: { $addToSet: "UniqueField" }
+
+$addFields:
+Purpose: Adds new fields to documents.
+Example: { $addFields: { "NewField": "NewValue" } }
+
+$elemMatch:
+Purpose: Matches documents that contain an array field with at least one element matching the specified conditions.
+Example: { "ArrayField": { $elemMatch: { "Subfield": "Value" } } }
+
+$each:
+Purpose: Modifies array fields by adding multiple values at once.
+Example: { $push: { "ArrayField": { $each: ["Value1", "Value2"] } } }
+
+$month $year $dayOfMonth:
+Purpose: Extracts the month component from a date field.
+Example: { "Month": { $month: "$DateField" } }
+
+$unwind:
+Purpose: Deconstructs an array field, creating a new document for each element.
+Example: { $unwind: "$ArrayField" }
+
+$lookup:
+Purpose: Performs a left outer join to another collection in the same database.
+Example:
+json
+Copy code
+{
+  $lookup: {
+    from: "otherCollection",
+    localField: "localField",
+    foreignField: "foreignField",
+    as: "newField"
+  }
+}
+
+$cond:
+Purpose: Performs a ternary conditional operation. It evaluates a boolean expression and returns one of two specified results based on the result of the expression.
+Syntax:
+newField: {
+    $cond: {
+    if: { $gte: ["$numericField", 0] },
+    then: "Positive",
+    else: "Negative or Zero"
+    }
+}
+
+$ifNull

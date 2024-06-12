@@ -1,0 +1,27 @@
+package com.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.bean.ATMCard;
+import com.repository.ATMCardRepository;
+import com.repository.AccountRepository;
+
+@Repository
+public class ATMCardDAO {
+	@Autowired
+	private AccountRepository accountRepository;
+
+	@Autowired
+	private ATMCardRepository atmCardRepository;
+
+	public void issueATMCardToAccount(int accountNumber, ATMCard atmCardObjet) {
+		atmCardObjet.setAccount(accountRepository.getById(accountNumber));
+		// Assuming ATMCard has a field for accountNumber
+        
+        atmCardRepository.save(atmCardObjet);
+			//fill code
+		
+	}
+
+}

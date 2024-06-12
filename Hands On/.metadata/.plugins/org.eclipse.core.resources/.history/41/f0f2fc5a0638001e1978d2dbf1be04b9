@@ -1,0 +1,29 @@
+package com.spring.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import com.spring.model.Appointment;
+import com.spring.service.AppointmentService;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+//use appropriate annotation to configure AppointmentController as Controller
+@Controller
+public class AppointmentController {
+	
+//	Use appropriate annotation
+	@Autowired
+	private AppointmentService service;	  	   	      	 	
+
+	
+	//invoke the service class - bookAppointment method.
+	@RequestMapping(value="/bookAppointment", method=RequestMethod.POST)
+	public String bookAppointment(@ModelAttribute("appointment") Appointment appointment, ModelMap model) {		
+			
+			//fill the code
+		 		
+		return null;
+	}
+	
+}

@@ -1,0 +1,82 @@
+package com.restaurant.service;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Component;
+
+import com.restaurant.exception.BookTableInvalidException;
+import com.restaurant.model.BookTable;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Component
+public class RestaurantServiceImpl implements IRestaurantService {
+
+	private static List<BookTable> bookList = new ArrayList<BookTable>();
+
+	public static List<BookTable> getBookList() {
+		return bookList;
+	}
+
+	public static void setBookList(List<BookTable> bookList) {
+		RestaurantServiceImpl.bookList = bookList;
+	}
+
+	public RestaurantServiceImpl() {
+
+	}
+
+	@Override
+	public BookTable bookATable(BookTable obj) throws BookTableInvalidException {
+//		validate something
+		bookList.add(obj);
+		log.info("Customer with id {} booked successfully " + obj.getBookingId());
+		return obj;
+
+	}
+
+	@Override
+	public BookTable calculateBill(String bookingId) {
+		BookTable bookTable = bookList.stream().filter(bookTableObj -> bookTableObj.getBookingId().equals(bookingId))
+				.findFirst().orElseThrow(() -> new RuntimeException());
+		double totalCost = bookTable.getTotalAdultVegCount() * 599 + bookTable.getTotalKidsVegCount() * 249
+				+ bookTable.getTotalAdultNonVegCount() * 699 + bookTable.getTotalKidsNonVegCount() * 249;
+		bookTable.setTotalBillAmount(totalCost);
+		return bookTable;
+	}
+
+	@Override
+	public List<BookTable> viewBookingOnAParticularDate(LocalDate dateRequired) throws BookTableInvalidException {
+		// TODO Auto-generated method stub
+		List<BookTable> bookTableList = bookList.stream()
+				.filter(bookTable -> bookTable.getBookingDate().equals(dateRequired))
+				.collect(Collectors.toUnmodifiableList());
+		if (bookTableList.isEmpty()) {
+			log.error("No bookings available on the given date");
+			throw new BookTableInvalidException("No bookings available on the given date");
+		}
+		log.info("View booking on a particular date is successfully done");
+		return bookTableList;
+	}
+
+	@Override
+	public List<String> findStarRatedCustomer() {
+		Map<String, Long> mobileNumberToBookingCount = bookList.stream()
+				.collect(Collectors.groupingBy(BookTable::getMobileNumber, Collectors.counting()));
+
+		long maxBookingCount = mobileNumberToBookingCount.values().stream().max(Long::compare).orElse(0L);
+
+		List<String> starRatedCustomers = mobileNumberToBookingCount.entrySet().stream()
+				.filter(entry -> entry.getValue() == maxBookingCount).map(Map.Entry::getKey)
+				.collect(Collectors.toList());
+
+		log.info("Find star rated customer is successfull");
+		return starRatedCustomers;
+	}
+
+}

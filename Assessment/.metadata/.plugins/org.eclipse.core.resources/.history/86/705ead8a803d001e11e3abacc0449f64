@@ -1,0 +1,36 @@
+package com.controller;
+
+import java.util.ArrayList;
+
+import com.model.PropertyInfo;
+import com.service.PropertyService;
+
+public class PropertyController {
+
+	private PropertyService propertyService;
+
+	public boolean addProperty(PropertyInfo propertyObj)
+	{
+		return false;
+	}
+	
+	public PropertyInfo viewPropertyById(Integer propertyId) {
+	       return null;
+	}
+
+	public ArrayList<PropertyInfo> viewPropertyByLocationAndCostRange(String location,double lowLimit,double highLimit)
+	{
+		return null;
+	}
+		
+	public boolean updatePropertyStatus(Integer propertyId)
+	{
+		return false;
+	}
+		
+	public boolean deleteProperty(Integer propertyId) 
+	{
+		return false;
+	}
+
+}

@@ -1,0 +1,168 @@
+/* ............... */
+/* Basic Selector */
+/* ............. */
+
+/* tag selector */
+p {
+    color: blue;
+}
+
+/* Class Selector */
+.special {
+    background: yellow;
+}
+
+/* Id Selector */
+#intro {
+    font-size: 2em;
+}
+
+/* Universal selector */
+* {
+    border: 1px solid black;
+}
+
+/* tag.class */
+p.special {
+    font-style: italic;
+}
+
+/* ..................... */
+/* Attribute Selectors  */
+/* ................... */
+
+/* [attribute] */
+[href] {
+    color: green;
+}
+
+/* [attribute=value] -> element with attribute value with value */
+[href="https://example.com"] {
+    color: red;
+}
+
+/* [attribute^=value] -> element with attribute value starting with value*/
+[href^="https"] {
+    font-weight: bold;
+}
+
+/* [attribute*=value] -> element with attribute value ending with value */
+[href$=".pdf"] {
+    text-decoration: underline;
+}
+
+/* [attribute*=value] -> element containing atrribute value value */
+[href*="infatica"] {
+    color: purple;
+}
+
+/* ............ */
+/* Combinators */
+/* ......... */
+
+/* element element -> element descendant of a specific element */
+div p {
+    text-align: center;
+}
+
+/* element > element -> element direct childre  of a specific element */
+div>p {
+    text-align: left;
+}
+
+/* element + element -> element adjacent siblings of a specific element */
+div+p {
+    text-align: right;
+}
+
+/* element ~ element -> elements that are general siblings of a specific element */
+div~p {
+    text-align: justify;
+}
+
+/* ............... */
+/* Pseudo-Classes */
+/* ............. */
+
+/* :hover -> link on mouse over state */
+a:hover {
+    color: orange;
+}
+
+/* :visited -> links that have been clicked */
+a:visited {
+    color: gray;
+}
+
+/* :first-child -> first child of its parent */
+p:first-child {
+    font-size: 1.5em;
+}
+
+/* :nth-child(n): -> nth child of its parent */
+p:nth-child(2) {
+    font-size: 0.8em;
+}
+
+/* :not(selector) -> every element that does not match the selector */
+p:not(.special) {
+    color: black;
+}
+
+/* ................ */
+/* Pseudo-Elements */
+/* .............. */
+
+/* ::first-letter -> first letter of an element */
+p::first-letter {
+    text-transform: uppercase;
+}
+
+/* ::first-line -> first line of an element */
+p::first-line {
+    font-style: italic;
+}
+
+/* ::before -> insert content before element */
+div::before {
+    content: "Hello";
+}
+
+/* ::after -> insert content after element */
+div::after {
+    content: "Bye";
+}
+
+/* ::selection ->  selects the portion of an element that is selected by the user*/
+p::selection {
+    color: red;
+}
+
+/* .......... */
+/* Functions */
+/* ........ */
+
+/* Selects an element if it contains another element */
+div:has(p) {
+    border: 1px solid blue;
+}
+
+/* Selects an element if it matches any of the selectors */
+p:matches(.special, .important) {
+    font-weight: bold;
+}
+
+/* :nth-child(an+b) -> Selects an element that is the an+bth child of its parent. */
+p:nth-child(2n+1) {
+    background: pink;
+}
+
+/* :nth-child(an+b) -> Selects an element that is the an+bth child of its parent counting from last child */
+p:nth-last-child(2n+1) {
+    background: lightblue;
+}
+
+/* :nth-of-type(an+b) -> Selects an element that is the an+bth element of its type among its siblings. */
+p:nth-of-type(2n+1) {
+    background: yellow;
+}

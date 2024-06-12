@@ -1,0 +1,8 @@
+<!-- Implement your code here -->
+<!-- Create a Form => 2 input text box , 1 input box type number and 1 button -->
+<form>
+    <input type="text" id="name" [(ngModel)]="student.name" name="student.name" placeholder="Name">
+    <input type="text" id="register" [(ngModel)]="student.registerNumber" name="student.registerNumber" placeholder="Register Number">
+    <input type="text" id="age" [(ngModel)]="student.age" name="student.age" placeholder="Age">
+    <button type="submit" (click)="ngOnInit()">Submit</button>
+</form>

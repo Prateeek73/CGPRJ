@@ -1,0 +1,51 @@
+package com.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.jwt.EntryPointJwt;
+import com.jwt.TokenFilter;
+
+@Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class SecurityConfig {
+
+	@Autowired
+	private EntryPointJwt jwtEntryPoint;
+	
+	@Autowired 
+	private TokenFilter tokenFilter;
+	
+	@Bean
+	private AuthenticationProvider daoAuthenticationProvider() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Bean
+	public SecurityFilterChain doFilter(HttpSecurity http) throws Exception {
+		http.cors(cors -> cors.disable())
+				.csrf(csrf -> csrf.disable())
+				.authorizeHttpRequests(auth -> auth
+						.requestMatchers("/app/**").permitAll()
+						.requestMatchers("leavemanagementapp").authenticated()
+						.anyRequest().authenticated())
+				.exceptionHandling(ex -> ex.authenticationEntryPoint(jwtEntryPoint))
+				.sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+		
+		http.authenticationProvider(daoAuthenticationProvider());
+		http.addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter.class);
+			
+		
+		return http.build();
+	}
+
+	
+}

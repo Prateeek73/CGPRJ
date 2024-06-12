@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- Enable AspectJ auto-proxying -->    
+	<aop:aspectj-autoproxy/>
+
+	<bean id="accnt1" class="com.spring.app.Account">
+		<property name="accountNo" value="100" />
+		<property name="accntBalance" value="10000" />
+		<property name="accntHolderName" value="Tom" />
+	</bean>
+
+	<bean id="accnt2" class="com.spring.app.Account">
+		<property name="accountNo" value="101" />
+		<property name="accntBalance" value="20000" />
+		<property name="accntHolderName" value="Sam" />
+	</bean>
+
+	<bean id="accnt3" class="com.spring.app.Account">
+		<property name="accountNo" value="102" />
+		<property name="accntBalance" value="4500" />
+		<property name="accntHolderName" value="John" />
+	</bean>
+
+	<bean id="bankObj" class="com.spring.app.Bank">
+		<property name="accntList">
+			<list>
+				<ref bean="accnt1" />
+				<ref bean="accnt2" />
+				<ref bean="accnt3" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Register the BankAspect as a Spring bean -->
+    <bean id="bankAspect" class="com.spring.app.BankAspect"/>
+
+</beans>

@@ -1,0 +1,37 @@
+package com.dao;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.bean.Account;
+import com.repository.AccountRepository;
+
+@Repository
+public class AccountDAO {
+	
+	@Autowired
+	private AccountRepository accountRepository;
+	
+	public void openAccount(Account account) {
+		//fill code
+		accountRepository.save(account);
+	}
+	
+	public List<Account> retrieveAccountBasedOnCardType(String cardType){
+		//fill code	
+		List<Account> accountList = accountRepository.findAll()
+				.stream()
+				.filter(account -> account.getAtmCard().getCardType().equalsIgnoreCase(cardType))
+				.collect(Collectors.toUnmodifiableList());
+		
+		if (!accountList.isEmpty()) {
+            logger.info("Account details with card type {} retrieved successfully", cardType);
+        } else {
+            logger.error("No account with card type {} found", cardType);
+        }
+		return accountList;
+	}
+}

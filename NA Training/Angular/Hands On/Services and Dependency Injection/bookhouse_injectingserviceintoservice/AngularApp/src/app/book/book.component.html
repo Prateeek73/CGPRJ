@@ -1,0 +1,45 @@
+<body>
+<h2 style="text-align:center"> GNN Book House</h2>
+
+<form>
+    <table style="margin-left:auto;margin-right:auto;text-align:center;">  
+     
+    <!--Design the page as per the requirement-->
+    <tr>
+      <td>Search Books by</td>
+      <td>
+        <select id="criteria" name="criteria" [(ngModel)]="criteria">
+          <option value="Book Name">Book Name</option>
+          <option value="Category">Category</option>
+      </select>
+      </td>
+      <td><input type="text" id="searchText" name="searchText" [(ngModel)]="searchText"></td>
+      <td><button id="search" name="search" (click)="searchBooks()">Search</button></td>
+    </tr>
+      
+</table>
+<br><br>
+
+<table>
+  <tr>
+      <td>ISBN</td>
+      <td>Book Name</td>
+      <td>Category</td>
+      <td>Price</td>
+      <td>Quantity</td>
+  </tr>
+  <tr  *ngFor = "let book of books">
+      <td>{{ book.isbn }}</td>
+      <td>{{ book.bookName }}</td>
+      <td>{{ book.category }}</td>
+      <td>{{ book.price }}</td>
+      <td>{{ book.quantity }}</td>
+  </tr>
+</table>
+
+<div style="text-align: center;color:firebrick;font-weight: bold;">
+  <!--Display the log data here-->
+  <p>{{ logData }}</p>
+</div>
+</form>
+</body>

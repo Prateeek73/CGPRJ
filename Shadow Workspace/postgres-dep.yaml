@@ -1,0 +1,35 @@
+apiVersion: apps/v1 #version of the Kubernetes API you're using to create this object
+kind: Deployment  #What kind of object you want to create
+metadata: #Data that helps uniquely identify the object
+   name: postgres
+
+#pod name
+spec: 
+  selector:
+    matchLabels:
+      app: postgres 
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:  
+      containers:
+      - name:  postgres-container
+        image: postgres:latest
+        ports:
+        - containerPort: 5432
+        env:               
+            - name: POSTGRES_USER
+              value:  postgres
+            - name: POSTGRES_PASSWORD
+              value:  "5676"
+            - name: POSTGRES_DB
+              value: bams_db
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"

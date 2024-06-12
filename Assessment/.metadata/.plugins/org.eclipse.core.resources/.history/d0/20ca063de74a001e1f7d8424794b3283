@@ -1,0 +1,49 @@
+package com.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.model.Leave;
+import com.service.LeaveService;
+
+
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
+@RequestMapping("/leavemanagementapp")
+public class LeaveController {
+
+	@Autowired
+	private LeaveService service;
+	
+	@PreAuthorize("hasRole('ROLE_USER')")
+	@PutMapping("/applyLeave/{empId}/{leave_from}/{leave_to}/{reason}/{leave_type}")
+	public Leave applyLeave(@PathVariable int empId, @PathVariable String leave_from, @PathVariable String leave_to,@PathVariable String reason, @PathVariable String leave_type) {
+		return service.applyLeave(empId, leave_from,leave_to,reason,leave_type);
+	}
+	
+	@PreAuthorize("hasRole('MANAGER')")
+	@GetMapping("/viewByStatus/{status}")
+	public Leave viewAllBasedOnLeaveStatus(@PathVariable String status){
+		return service.viewAllBasedOnLeaveStatus(status);
+	}
+	
+	@PreAuthorize("hasRole('ROLE_MANAGER')")
+	@GetMapping("/viewAllLeaveRequest")
+	public List<Leave> viewAllLeaveRequest(){
+		return service.viewAllLeaveRequest();
+	}
+	
+	@PreAuthorize("hasRole('ROLE_MANAGER')")
+	@PutMapping("/approveleave/{empId}")
+	public Leave approveLeaveRequest(@PathVariable int empId){
+		return service.approveLeaveRequest(empId);
+	}
+}

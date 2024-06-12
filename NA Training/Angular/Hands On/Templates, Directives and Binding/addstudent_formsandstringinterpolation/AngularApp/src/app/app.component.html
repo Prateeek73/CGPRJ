@@ -1,0 +1,32 @@
+<!-- Implement Your Code Here -->
+<html>
+<body>
+    <div class="page-content">
+        <h2>Student Administration</h2>
+        <form 
+        (ngSubmit)="addNewStudent(form.value.name, form.value.registrationNumber, form.value.age)" 
+        #form="ngForm" 
+        action="#" 
+        class="form-detail">
+            <h3>{{title}}</h3>
+            <div class="form-row">
+                <!--Fill your code for name-->
+                <input name="name" placeholder="Name" ngModel required>
+            </div>
+            <div class="form-row">
+                <!--Fill your code for register number-->
+                <input name="registrationNumber" placeholder="Register Number" ngModel required>
+            </div>
+            <div class="form-row">
+                <!--Fill your code for age-->
+                <input name="age" placeholder="Age" ngModel required>
+            </div>
+            <div class="form-row-last">
+                <!--Fill your code for button-->
+                <button type="submit">Submit</button>
+            </div>
+            <p>{{msg}}</p>
+        </form>
+  </div>
+</body>
+</html>

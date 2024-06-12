@@ -1,0 +1,59 @@
+<body>
+  <!--Fill code for heading -->
+    <h2>{{title}}</h2>
+    <div class="form-group">
+      <!-- Fill code for Customer Name-->
+      <label for="customerName">Customer Name</label>
+      <input type="text" id="customerName" name="customerName">
+    </div>
+    <br>
+    <div class="form-group">
+      <!-- Fill code for Phone Number-->
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" id="phoneNumber" name="phoneNumber">
+    </div>
+    <br>
+    <div>
+      <!-- Fill code for Product Type-->
+      <label for="search">Product Type:</label>
+    <input type="text" id="search" name="search" [(ngModel)]="search">
+    </div>
+    <div [ngSwitch]="search">
+      <div *ngSwitchCase="'fruits'">
+        <select id="fruits" name="fruits">
+          <option value="Select Fruits">Select Fruits</option>
+          <option value="Apple">Apple</option>
+          <option value="Banana">Banana</option>
+          <option value="Grapes">Grapes</option>
+          <option value="Guava">Guava</option>
+        </select>
+      </div>
+      <div *ngSwitchCase="'vegetables'">
+        <select id="vegetables" name="vegetables">
+          <option value="Select Vegetables">Select Vegetables</option>
+          <option value="Carrot">Carrot</option>
+          <option value="Beetroot">Beetroot</option>
+          <option value="Potato">Potato</option>
+          <option value="Mushroom">Mushroom</option>
+        </select>
+      </div>
+      <div *ngSwitchCase="'meat'">
+        <select id="meat" name="meat">
+          <option value="Select Meat">Select Meat</option>
+          <option value="Chicken">Chicken</option>
+          <option value="Goat">Goat</option>
+          <option value="Beef">Beef</option>
+          <option value="Pork">Pork</option>
+        </select>
+      </div>
+    </div>
+    <!--Fill code for ngSwitch-->
+</body>
+
+
+
+
+
+
+
+

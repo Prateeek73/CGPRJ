@@ -1,0 +1,39 @@
+package com.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.model.Loan;
+import com.service.LoanProvider;
+
+@RestController
+public class LoanController {
+
+	@Autowired
+	private LoanProvider loanProvider;
+
+	@PostMapping("/addLoan")
+	public boolean addLoan(Loan loanObj) {
+		return loanProvider.addLoan(loanObj);
+	}
+
+	public Loan viewLoanById(String loanId) {
+		return null;
+	}
+
+	public ArrayList<Loan> viewLoanByType(String loanType) {
+		return null;
+	}
+
+	public boolean updateLoanAmount(String loanId, double loanAmount) {
+		return false;
+	}
+
+	public boolean deleteLoanInfo(String loanId) {
+		return false;
+	}
+
+}

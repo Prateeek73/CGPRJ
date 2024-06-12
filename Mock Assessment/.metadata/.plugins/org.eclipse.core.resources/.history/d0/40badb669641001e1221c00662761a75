@@ -1,0 +1,44 @@
+package com.restaurant.controller;
+
+
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.restaurant.exception.BookTableInvalidException;
+import com.restaurant.model.BookTable;
+;
+public class RestaurantController {
+	
+	
+	
+	@PostMapping(value = "/book")
+	public BookTable bookATable(BookTable bookObj) throws BookTableInvalidException {
+		return null;
+	}
+
+	@PutMapping(value = "calculate/{bookingId}")
+	public BookTable calculateBill(@PathVariable String bookingId){
+		return null;
+	}
+	
+	@GetMapping(value = "/viewBooking/{dateRequired}")
+	public List<BookTable> viewBookingOnAParticularDate(@PathVariable String dateRequired) throws BookTableInvalidException {
+		return null;
+		
+	}
+	
+
+	@GetMapping(value = "/starRated")
+	public List<String> findStarRatedCustomer(){
+		return null;
+	}
+
+	
+
+
+}

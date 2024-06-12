@@ -1,0 +1,17 @@
+<div>
+    <!--Implement your code for creating table-->
+    <table>
+        <thead>
+            <tr>
+                <th>Ride Type</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let boat of boatRides">
+                <td>{{boat.text}}</td>
+                <td>{{boat.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

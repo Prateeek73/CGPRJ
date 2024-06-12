@@ -1,0 +1,148 @@
+Tekstac Codes
+
+1) Add and employee to collection
+db.employees.insertOne(
+    {
+        ...
+    }
+);
+db.employees.find(
+    {
+        "_id": "id"
+    }
+);
+
+2) Updating book documents
+//set for updating specific field
+//inc for increasing to count
+db.books.updateMany(
+    {...},
+    {   
+        $set: {...},
+        $inc: {...}
+    }    
+)
+
+3) Update many employees
+db.employees.updateMany(
+    {},
+    { 
+        $set: { 
+            DeptNo: null
+        }
+    }
+)
+
+4) Add training informations
+//push add specified value to array field if it exists
+//append multiple values to array in single update 
+db.employees.updateMany(
+    {...},
+    {
+        $push: {
+            "Training_to_attend": { 
+                $each: ["Python", "DBMS"]
+            }
+        }
+    }
+)
+
+5) Changes made based on publisher
+db.books.updateMany(
+    {...},
+    {
+        $inc: {...},
+        $set: {...}
+    }
+)
+
+6) Remove fields
+//unset for removing specific rows
+db.books.updateMany({},
+    {
+        $unset: {
+            BookPrice: "",
+            BookCopies: ""
+        }
+    }
+);
+
+7) Delete an employee
+db.employees.deleteOne({...});
+
+8) Delete an collection
+db.employees.drop();
+
+9) Count based on job
+//or is a logical query operator that performs opeartion on array of expression
+db.employees.find({
+    $or: [
+        {Job: Designer},
+        {Job: Analyst}
+    ]
+}).count()
+
+10) Category bases on size 
+//size of an array field matches the length
+db.books.find({
+    BookCategory: {
+        $size: 2
+    }
+}).count();
+
+11) Embedded document
+db.books.find({ 
+        'reviews.rating': 5,
+        'reviews.review_text': "Good"
+    },
+    {
+        _id: 0,
+        BookTitle: true,
+        BookAuthor: 1
+    }
+);
+
+12) Employee details based on Hired Year
+db.employees.find({
+    $and: [
+        {HireYear: {$gte: 1988}},
+        {HireYear: {$lte: 2005}}
+    ]
+});
+
+13) Female Employee details
+//$ne not equeals
+db.employees.find({
+    $and: [
+        {Sex: 'F'},
+        {Salary: {$gte: 80000}},
+        {Salary: {$lte: 150000}},
+        {DeptNo: {$ne: 'E11'}}
+    ]
+})
+
+14) Employee salary details
+db.employees.find(
+    {
+        $and: [...],    
+    },
+    {
+        _id: 0,
+        LastName: 1,
+        Salary: 1
+    }
+)
+
+15)Hindi and English books
+//$eq is equals
+db.books.find({
+    BookCopies: {$gte: 5000},
+    $or: [
+        {BookCategory: {$elemMatch: {$eq: 'Crime'}}},
+        {BookCategory: {$elemMatch: {$eq: 'English'}}},
+        {BookCategory: {$elemMatch: {$eq: 'Hindi'}}}
+    ]
+}).count();
+
+16) Education Levels
+db.employees.distinct("Edlevel");

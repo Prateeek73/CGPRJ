@@ -1,0 +1,66 @@
+package com.example.controller;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.dto.SignUpDto;
+import com.example.dto.LogInDto;
+import com.example.service.UserService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/userms")
+public class UserRegistrationController {
+
+	@Autowired
+	private DaoAuthenticationProvider authenticationManager;
+
+	@Autowired
+	private UserService userService;
+
+	@PostMapping("/signup")
+	public ResponseEntity<?> signUpUser(@Valid @RequestBody SignUpDto signUpDto, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			// If there are validation errors, generate field errors and return them
+			Map<String, String> fieldErrors = new HashMap<>();
+			bindingResult.getFieldErrors()
+					.forEach(fieldError -> fieldErrors.put(fieldError.getField(), fieldError.getDefaultMessage()));
+			return ResponseEntity.badRequest().body(fieldErrors);
+		}
+		if (!signUpDto.getPassword().equals(signUpDto.getConfirmPassword())) {
+			return ResponseEntity.badRequest()
+					.body(Collections.singletonMap("confirmPassword", "Confirm Password does not match password"));
+		}
+		userService.save(signUpDto);
+		return ResponseEntity.ok().body("User Signed Up Successfully");
+	}
+
+	@PostMapping("/login")
+	public ResponseEntity<?> loginInUser(@Valid @RequestBody LogInDto logInDto) {
+		UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(logInDto.getEmail(),
+				logInDto.getPassword());
+		Authentication authentication = authenticationManager.authenticate(token);
+		if (authentication.isAuthenticated()) {
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+			return new ResponseEntity<String>("User Logged In Successfully", HttpStatus.OK);
+		}
+		return new ResponseEntity<String>("Invaluid email and Password", HttpStatus.UNAUTHORIZED);
+
+	}
+}

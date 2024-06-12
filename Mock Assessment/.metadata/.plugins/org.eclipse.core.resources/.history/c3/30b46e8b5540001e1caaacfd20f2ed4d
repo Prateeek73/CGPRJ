@@ -1,0 +1,12 @@
+package com.repository;
+
+@Repository
+public interface TransactionRepository extends JpaRepository<BankTransaction, String> {
+
+    List<BankTransaction> findByAccountObj_AccountNumber(String accountNumber);
+    List<BankTransaction> findByTransactionType(String transactionType);
+    List<BankTransaction> findByTransactionTypeAndAmountGreaterThanEqual(String transactionType, double amount);
+
+    // Add more methods if needed
+
+}

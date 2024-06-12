@@ -1,0 +1,93 @@
+[ERROR] 14-08-2023 03:23:14.463 pm [http-nio-8088-exec-5]  com.service.RecruitService - Candidate List is empty
+[INFO ] 14-08-2023 10:15:35.931 pm [http-nio-8088-exec-7]  com.service.RecruitService - Candidate details added successfully: Prashanth
+[INFO ] 14-08-2023 10:17:05.125 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate details are Listed
+[ERROR] 14-08-2023 10:17:49.357 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:50.071 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:50.502 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:50.837 pm [http-nio-8088-exec-4]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:51.161 pm [http-nio-8088-exec-5]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:51.485 pm [http-nio-8088-exec-6]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:51.762 pm [http-nio-8088-exec-7]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:51.996 pm [http-nio-8088-exec-8]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:52.181 pm [http-nio-8088-exec-9]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:52.445 pm [http-nio-8088-exec-10]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:52.629 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:52.839 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:53.086 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:53.346 pm [http-nio-8088-exec-4]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:53.523 pm [http-nio-8088-exec-5]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:17:53.758 pm [http-nio-8088-exec-6]  com.service.RecruitService - Candidate List is empty
+[INFO ] 14-08-2023 10:18:31.362 pm [http-nio-8088-exec-10]  com.service.RecruitService - Candidate details added successfully: Prashanth
+[INFO ] 14-08-2023 10:22:44.698 pm [http-nio-8088-exec-4]  com.service.RecruitService - Candidate details added successfully: Prashanth
+[INFO ] 14-08-2023 10:22:49.184 pm [http-nio-8088-exec-6]  com.service.RecruitService - Candidate details are Listed
+[ERROR] 14-08-2023 10:24:36.063 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:36.925 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:37.464 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:37.731 pm [http-nio-8088-exec-4]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:37.995 pm [http-nio-8088-exec-5]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:38.247 pm [http-nio-8088-exec-6]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:38.415 pm [http-nio-8088-exec-7]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:38.609 pm [http-nio-8088-exec-8]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:38.797 pm [http-nio-8088-exec-9]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 10:24:49.753 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:07:17.304 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:07:41.918 pm [http-nio-8088-exec-6]  com.service.RecruitService - Candidate List is empty
+[INFO ] 14-08-2023 11:08:15.567 pm [http-nio-8088-exec-8]  com.service.RecruitService - Candidate details added successfully: Prateek
+[INFO ] 14-08-2023 11:08:22.869 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate details are Listed
+[ERROR] 14-08-2023 11:18:16.529 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:22:13.442 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:23:36.105 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:06.813 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:08.540 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:09.008 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:09.340 pm [http-nio-8088-exec-4]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:09.699 pm [http-nio-8088-exec-5]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:09.800 pm [http-nio-8088-exec-6]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:10.006 pm [http-nio-8088-exec-7]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:10.230 pm [http-nio-8088-exec-8]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:10.542 pm [http-nio-8088-exec-9]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:10.771 pm [http-nio-8088-exec-10]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:10.922 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:11.092 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:11.268 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:11.463 pm [http-nio-8088-exec-4]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:11.628 pm [http-nio-8088-exec-5]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:11.802 pm [http-nio-8088-exec-6]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:11.990 pm [http-nio-8088-exec-7]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:25:12.173 pm [http-nio-8088-exec-8]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:26:36.001 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:26:38.015 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:26:38.618 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:26:38.876 pm [http-nio-8088-exec-4]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:27:12.644 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:28:00.936 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:29:50.224 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:29:52.169 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:31:50.071 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:31:52.901 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:33:47.424 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:34:06.457 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:34:08.258 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:35:41.739 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:35:44.463 pm [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:36:41.606 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:38:38.164 pm [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 14-08-2023 11:42:16.811 pm [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 15-08-2023 12:03:31.086 am [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 15-08-2023 12:03:32.507 am [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 15-08-2023 12:03:33.538 am [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[ERROR] 15-08-2023 12:03:39.078 am [http-nio-8088-exec-5]  com.service.RecruitService - Candidate List is empty
+[INFO ] 15-08-2023 01:22:33.416 am [http-nio-8088-exec-4]  com.service.RecruitService - Candidate details added successfully: Prashanth
+[INFO ] 15-08-2023 01:22:54.177 am [http-nio-8088-exec-7]  com.service.RecruitService - Candidate details added successfully: Prateek
+[INFO ] 15-08-2023 01:22:56.831 am [http-nio-8088-exec-9]  com.service.RecruitService - Candidate details are Listed
+[INFO ] 15-08-2023 01:24:23.189 am [http-nio-8088-exec-3]  com.service.RecruitService - Candidate details added successfully: Prashanth
+[INFO ] 15-08-2023 01:24:44.008 am [http-nio-8088-exec-6]  com.service.RecruitService - Candidate details added successfully: Prateek
+[INFO ] 15-08-2023 01:24:46.005 am [http-nio-8088-exec-8]  com.service.RecruitService - Candidate details are Listed
+[ERROR] 15-08-2023 01:34:37.760 am [http-nio-8088-exec-1]  com.service.RecruitService - Candidate List is empty
+[ERROR] 15-08-2023 01:35:44.013 am [http-nio-8088-exec-2]  com.service.RecruitService - Candidate List is empty
+[ERROR] 15-08-2023 01:37:52.846 am [http-nio-8088-exec-3]  com.service.RecruitService - Candidate List is empty
+[INFO ] 15-08-2023 01:41:46.588 am [http-nio-8088-exec-4]  com.service.RecruitService - Candidate details added successfully: Prashanth
+[INFO ] 15-08-2023 01:42:32.775 am [http-nio-8088-exec-1]  com.service.RecruitService - Candidate details added successfully: Prashanth
+[ERROR] 22-08-2023 11:56:45.017 pm [http-nio-8088-exec-8]  com.service.RecruitService - Candidate List is empty
+[INFO ] 22-08-2023 11:57:44.177 pm [http-nio-8088-exec-4]  com.service.RecruitService - Candidate details added successfully: 
+[INFO ] 23-08-2023 12:02:29.976 am [http-nio-8088-exec-3]  com.service.RecruitService - Candidate details added successfully: 

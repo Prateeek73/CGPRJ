@@ -1,0 +1,76 @@
+<!--Implement your code here for Add Employee Details and Filter Employee Details-->
+
+<!-- Add Employee Details -->
+<div *ngIf="flag == 1">
+    <h4>EMPLOYEE DETAILS</h4><hr>
+        <table>
+            <!--Fill code here -->
+            <tr>
+                <td>Employee Id</td>
+                <input id="employeeId" name="employeeId" [(ngModel)]="home.employeeId">
+            </tr>
+            <tr>
+                <td>Employee Name</td>
+                <input id="employeeName" type="text" [(ngModel)]="home.employeeName">
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <input id="phoneNumber" type="text" [(ngModel)]="home.phoneNumber">
+            </tr>
+            <tr>
+                <td>Division</td>
+                <input id="division" type="text" [(ngModel)]="home.division">
+            </tr>
+            <tr>
+                <td>Years of Experience</td>
+                <input id="experience" type="number" [(ngModel)]="home.experience">
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <input id="salary" type="number" [(ngModel)]="home.salary">
+            </tr>
+            <tr>
+                <td>
+                    <button id="submit" type="submit" (click)="addEmployee()">Add</button>
+                </td>
+                <td>
+                    <button id="view">View</button>
+                </td>
+            </tr>
+        </table>
+        <p id="error">{{error || status}}</p>
+</div>
+<div *ngIf="flag == 2">
+    <h4>FILTER EMPLOYEES</h4><hr>
+        <table>
+            <!--Fill code here for creating UI for search-->
+            <tr>
+                <td>Max Salary</td>
+                <input id="maxsalary" type="number" [(ngModel)]="maxsalary">
+            </tr>
+            <tr>
+                <td colspan="2"><button id="filter" type="submit" (click)="filter()">Filter</button></td>
+            </tr>
+        </table>
+    <div>
+        <table>
+            <!--Fill code here for displaying table after search-->
+            <thead>
+                <td>Employee id</td>
+                <td>Employee name</td>
+                <td>Phone Number</td>
+                <td>Division</td>
+                <td>Years of Experience</td>
+                <td>Salary</td>
+            </thead>
+            <tr *ngFor="let employee of filterList"> 
+                <td>{{employee.employeeId}}</td>
+                <td>{{employee.employeeName}}</td>
+                <td>{{employee.phoneNumber}}</td>
+                <td>{{employee.division}}</td>
+                <td>{{employee.experience}}</td>
+                <td>{{employee.salary}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

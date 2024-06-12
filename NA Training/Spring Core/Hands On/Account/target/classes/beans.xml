@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    
+    <bean id="account" class="com.spring.app.Account">
+        <constructor-arg name="accNumber" value="335647852"/>
+        <constructor-arg name="accHolderName" value="Vanitha"/>
+        <constructor-arg name="accBalance" value="250000.0"/>
+        <constructor-arg name="loanInfo">
+            <bean class="com.spring.app.Loan">
+                <constructor-arg name="loanType" value="HomeLoan"/>
+                <constructor-arg name="loanAmount" value="150000.0"/>
+            </bean>
+        </constructor-arg>
+    </bean>	
+    
+</beans>

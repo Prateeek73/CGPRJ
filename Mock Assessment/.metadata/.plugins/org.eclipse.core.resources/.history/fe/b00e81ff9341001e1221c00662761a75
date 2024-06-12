@@ -1,0 +1,117 @@
+package com.restaurant.model;
+
+import java.time.LocalDate;
+
+public class BookTable {
+	private String bookingId;
+	private String customerName;
+	private String mobileNumber;
+	private Integer totalGuestCount;
+	private Integer totalAdultVegCount;
+	private Integer totalAdultNonVegCount;
+	private Integer totalKidsVegCount;
+	private Integer totalKidsNonVegCount;
+	public String getBookingId() {
+		return bookingId;
+	}
+
+	public void setBookingId(String bookingId) {
+		this.bookingId = bookingId;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public Integer getTotalGuestCount() {
+		return totalGuestCount;
+	}
+
+	public void setTotalGuestCount(Integer totalGuestCount) {
+		this.totalGuestCount = totalGuestCount;
+	}
+
+	public Integer getTotalAdultVegCount() {
+		return totalAdultVegCount;
+	}
+
+	public void setTotalAdultVegCount(Integer totalAdultVegCount) {
+		this.totalAdultVegCount = totalAdultVegCount;
+	}
+
+	public Integer getTotalAdultNonVegCount() {
+		return totalAdultNonVegCount;
+	}
+
+	public void setTotalAdultNonVegCount(Integer totalAdultNonVegCount) {
+		this.totalAdultNonVegCount = totalAdultNonVegCount;
+	}
+
+	public Integer getTotalKidsVegCount() {
+		return totalKidsVegCount;
+	}
+
+	public void setTotalKidsVegCount(Integer totalKidsVegCount) {
+		this.totalKidsVegCount = totalKidsVegCount;
+	}
+
+	public Integer getTotalKidsNonVegCount() {
+		return totalKidsNonVegCount;
+	}
+
+	public void setTotalKidsNonVegCount(Integer totalKidsNonVegCount) {
+		this.totalKidsNonVegCount = totalKidsNonVegCount;
+	}
+
+	public LocalDate getBookingDate() {
+		return bookingDate;
+	}
+
+	public void setBookingDate(LocalDate bookingDate) {
+		this.bookingDate = bookingDate;
+	}
+
+	public Double getTotalBillAmount() {
+		return totalBillAmount;
+	}
+
+	public void setTotalBillAmount(Double totalBillAmount) {
+		this.totalBillAmount = totalBillAmount;
+	}
+
+	private LocalDate bookingDate;
+	private Double totalBillAmount;
+
+	public BookTable(String bookingId, String customerName, String mobileNumber, Integer totalGuestCount,
+			Integer totalAdultVegCount, Integer totalAdultNonVegCount, Integer totalKidsVegCount,
+			Integer totalKidsNonVegCount, LocalDate bookingDate, Double totalBillAmount) {
+		super();
+		this.bookingId = bookingId;
+		this.customerName = customerName;
+		this.mobileNumber = mobileNumber;
+		this.totalGuestCount = totalGuestCount;
+		this.totalAdultVegCount = totalAdultVegCount;
+		this.totalAdultNonVegCount = totalAdultNonVegCount;
+		this.totalKidsVegCount = totalKidsVegCount;
+		this.totalKidsNonVegCount = totalKidsNonVegCount;
+		this.bookingDate = bookingDate;
+		this.totalBillAmount = totalBillAmount;
+	}
+
+	public BookTable() {
+
+	}
+
+}

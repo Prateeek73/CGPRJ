@@ -1,0 +1,48 @@
+package com.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.exception.InvalidLoanException;
+import com.model.Loan;
+import com.service.LoanProvider;
+
+@RestController
+public class LoanController {
+
+	@Autowired
+	private LoanProvider loanProvider;
+
+	@PostMapping("/addLoan")
+	public boolean addLoan(Loan loanObj) throws InvalidLoanException{
+		return loanProvider.addLoan(loanObj);
+	}
+
+	@GetMapping("/viewLoanById/{loanId}")
+	public Loan viewLoanById(@PathVariable("loanId") String loanId) {
+		return loanProvider.viewLoanById(loanId);
+	}
+
+	@GetMapping("/viewLoanByType/{loanType}")
+	public ArrayList<Loan> viewLoanByType(@PathVariable("loanType") String loanType) {
+		return loanProvider.viewLoanByType(loanType);
+	}
+
+	@PutMapping("/updateLoanAmount/{loanId}/{loanType}")
+	public boolean updateLoanAmount(@PathVariable("loanId") String loanId, @PathVariable("loanType") double loanAmount) {
+		return loanProvider.updateLoanAmount(loanId, loanAmount);
+	}
+
+	@DeleteMapping("/deleteLoan/{P1}")
+	public boolean deleteLoanInfo(@PathVariable("loanId") String loanId) {
+		return loanProvider.deleteLoanInfo(loanId);
+	}
+
+}

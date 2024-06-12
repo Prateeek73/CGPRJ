@@ -1,0 +1,10 @@
+package com.repository;
+
+@Repository
+public interface AccountRepository extends JpaRepository<Account, String> {
+
+    List<Account> findByBalanceAmountGreaterThanEqual(double balance);
+
+    // Add more methods if needed
+
+}

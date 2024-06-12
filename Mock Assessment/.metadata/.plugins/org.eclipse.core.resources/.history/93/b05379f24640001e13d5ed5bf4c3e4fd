@@ -1,0 +1,17 @@
+package com.repository;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.entities.Account;
+
+//Provide necessary Annotation
+public interface AccountRepository extends JpaRepository<Account, String> {
+	
+	//Provide necessary method to view Account with balance greater than or equal to a value 
+	List<Account> findByBalanceGreaterThanEqual(BigDecimal balance);
+//    Account findByAccountNumber(String accountNumber);
+
+}

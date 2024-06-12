@@ -1,0 +1,38 @@
+body {
+    background-color: #dfdede;
+}
+
+h2 {
+    background-color: #ffc14e;
+    color: #ffffff;
+    height: 50px;
+    padding: 15px;
+}
+
+div {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+input {
+    width: 40%;
+    padding: 10px;
+    margin-left: 45%;
+}
+
+a {
+    text-decoration: underline;
+    color: blue;
+}
+
+button {
+    margin-left: 60%;
+    width: 15%;
+    color: white;
+    background-color: blue;
+    padding: 3px;
+}
+
+
+
+

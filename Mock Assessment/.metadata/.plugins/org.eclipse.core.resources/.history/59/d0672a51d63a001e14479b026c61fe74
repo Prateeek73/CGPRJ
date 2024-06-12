@@ -1,0 +1,48 @@
+package com.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.model.Loan;
+import com.service.LoanProvider;
+
+@RestController
+public class LoanController {
+
+	@Autowired
+	private LoanProvider loanProvider;
+
+	@PostMapping("/addLoan")
+	public boolean addLoan(Loan loanObj) {
+		return loanProvider.addLoan(loanObj);
+	}
+
+	@GetMapping("/viewLoanById/{P1}")
+	public Loan viewLoanById(@PathVariable("P1") String loanId) {
+		return loanProvider.viewLoanById(loanId);
+	}
+
+	@GetMapping("/viewLoanByType/{Housing}")
+	public ArrayList<Loan> viewLoanByType(@PathVariable("Housing") String loanType) {
+		return loanProvider.viewLoanByType(loanType);
+	}
+
+	@PutMapping("/updateLoanAmount/{P1}/{200000}")
+	public boolean updateLoanAmount(@PathVariable("P1") String loanId, double loanAmount) {
+		return false;
+	}
+
+	@DeleteMapping("/deleteLoan/{P1}")
+	public boolean deleteLoanInfo(@PathVariable("P1")String loanId) {
+		return false;
+	}
+
+}

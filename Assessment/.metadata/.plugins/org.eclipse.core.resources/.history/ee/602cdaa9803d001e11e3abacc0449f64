@@ -1,0 +1,46 @@
+package com.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.model.PropertyInfo;
+import com.service.PropertyService;
+
+@RestController
+@RequestMapping("/HRE")
+public class PropertyController {
+
+	@Autowired
+	private PropertyService propertyService;
+
+	@PostMapping("\insertProperty")
+	public boolean addProperty(PropertyInfo propertyObj) {
+		return propertyService.addProperty(propertyObj);
+	}
+
+	
+	public PropertyInfo viewPropertyById(Integer propertyId) {
+		return null;
+	}
+
+	
+	public ArrayList<PropertyInfo> viewPropertyByLocationAndCostRange(String location, double lowLimit,
+			double highLimit) {
+		return null;
+	}
+
+	
+	public boolean updatePropertyStatus(Integer propertyId) {
+		return false;
+	}
+
+	
+	public boolean deleteProperty(Integer propertyId) {
+		return false;
+	}
+
+}

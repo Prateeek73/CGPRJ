@@ -1,0 +1,40 @@
+<h1>{{title}}</h1>
+<div *ngIf="!editing">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td id="td1">{{ name }}</td>
+        </tr>
+        <tr>
+            <td>Mail Id</td>
+            <td id="td2">{{ mail }}</td>
+        </tr>
+        <tr>
+            <td>Contact Number</td>
+            <td id="td3">{{ contact }}</td>
+        </tr>
+    </table>
+    <input id="edit" type="submit" (click)="editProfile()" value="Update Profile">
+</div>
+<table *ngIf="editing">
+    <tr>
+        <th>Enter Your Profile Details</th>
+    </tr>
+    <tr>
+        <td><label for="name">Name</label></td>
+        <td><input type="text" id="name" name="name" [(ngModel)]="name" /></td>
+    </tr>
+    <tr>
+        <td><label for="mail">Mail Id</label></td>
+        <td><input type="text" id="mail" name="mail" [(ngModel)]="mail" /></td>
+    </tr>
+    <tr>
+        <td><label for="contact">Contact Number</label></td>
+        <td><input type="text" id="contact" name="contact" [(ngModel)]="contact" />
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input id="save" type="submit" (click)="saveProfile()" value="Save"></td>
+    </tr>
+</table>

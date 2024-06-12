@@ -1,0 +1,15 @@
+<!-- Implement your Code here -->
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Register Number</th>
+        <th>Age</th>
+        <th>Name Length</th>
+    </tr>
+    <tr *ngFor="let stud of student">
+        <td>{{ stud.name}}</td>
+        <td>{{ stud.registerNumber}}</td>
+        <td>{{ stud.age}}</td>
+        <td>{{ stud.name | nameLength }}</td>
+    </tr>
+</table>

@@ -1,0 +1,50 @@
+package com.jwt;
+
+
+
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.stereotype.Component;
+
+import com.service.UserDetailsImpl;
+
+import io.jsonwebtoken.Jwts;
+
+
+@Component
+public class JwtUtility {
+	
+
+	@Value("${jwtSecret}")
+	private String jwtSecret;
+
+	@Value("${jwtExpirationMs}")
+	private int jwtExpirationMs;
+
+	public String generateToken(Authentication authentication) {
+		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+		
+		List<String> roles = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
+		return doGenerateToken(userDetails.getUsername(), roles);
+	}
+	
+	private String doGenerateToken(String username, List<String> roles) {
+		return Jwts.builder()
+				.setSubject(username)
+				.setClaims("role",roles)
+				.setIssuedAt(new Date())
+				.compact();
+		
+	}
+
+	public String getUsernameFromToken(String token) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
